@@ -6,10 +6,10 @@ import (
 )
 
 // BookstoreRoutes sets up the routes for the bookstore API
-func BookstoreRoutes(r *mux.Router) {
-	r.HandleFunc("/bookstore", controllers.GetBooks).Methods("GET")
-	r.HandleFunc("/bookstore/{bookID}", controllers.GetBookByID).Methods("GET")
-	r.HandleFunc("/bookstore", controllers.CreateBook).Methods("POST")
-	r.HandleFunc("/bookstore/{bookID}", controllers.UpdateBook).Methods("PUT")
-	r.HandleFunc("/bookstore/{bookID}", controllers.DeleteBook).Methods("DELETE")
+func RegisterBookStoreRoutes(r *mux.Router) {
+	r.HandleFunc("/book/", controllers.GetBooks).Methods("GET")
+	r.HandleFunc("/book/{bookID}", controllers.GetBookByID).Methods("GET")
+	r.HandleFunc("/book", controllers.CreateBook).Methods("POST")
+	r.HandleFunc("/book/{bookID}", controllers.UpdateBook).Methods("PUT")
+	r.HandleFunc("/book/{bookID}", controllers.DeleteBook).Methods("DELETE")
 }
